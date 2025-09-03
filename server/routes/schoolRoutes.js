@@ -16,7 +16,7 @@ const storage = new CloudinaryStorage({
 });
 const upload = multer({ storage });
 
-// ➡️ Add School
+// Add School
 router.post("/add", upload.single("image"), async (req, res) => {
   try {
     const { name, address, city, state, contact, email_id } = req.body;
@@ -38,7 +38,7 @@ router.post("/add", upload.single("image"), async (req, res) => {
   }
 });
 
-// ➡️ Get Schools
+// Get Schools
 router.get("/", async (req, res) => {
   try {
     const schools = await School.find();
